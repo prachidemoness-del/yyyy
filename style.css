@@ -1,0 +1,308 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#120021,#1f0038,#000);
+overflow:hidden;
+color:white;
+height:100vh;
+}
+
+/* START */
+
+#start{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#120021;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+cursor:pointer;
+transition:1s;
+}
+
+.box{
+text-align:center;
+}
+
+.box h1{
+font-size:2.6rem;
+font-family:'Dancing Script',cursive;
+color:#ffb3ff;
+margin-bottom:15px;
+}
+
+.box p{
+opacity:.8;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+50%{opacity:.2;}
+}
+
+/* HEARTS */
+
+#hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+bottom:-30px;
+font-size:22px;
+animation:heart 6s linear forwards;
+opacity:.6;
+}
+
+@keyframes heart{
+
+0%{
+transform:translateY(0) scale(.5);
+opacity:0;
+}
+
+20%{
+opacity:.7;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* MAIN */
+
+#main{
+width:100%;
+height:100%;
+position:relative;
+}
+
+.scene{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+opacity:0;
+visibility:hidden;
+transition:1s;
+}
+
+.scene.active{
+opacity:1;
+visibility:visible;
+}
+
+/* INTRO */
+
+.title{
+font-size:2.7rem;
+font-family:'Dancing Script',cursive;
+color:#ffc6ff;
+margin-bottom:25px;
+}
+
+.loading{
+
+width:260px;
+height:12px;
+background:#333;
+border-radius:30px;
+overflow:hidden;
+margin-bottom:20px;
+
+}
+
+.fill{
+
+width:100%;
+height:100%;
+background:linear-gradient(90deg,#ff4bd8,#8b5cf6);
+
+animation:load 2s linear;
+
+}
+
+@keyframes load{
+
+from{
+width:0;
+}
+
+to{
+width:100%;
+}
+
+}
+
+.intro{
+
+text-align:center;
+font-size:1rem;
+line-height:1.8;
+
+}
+
+/* PHOTOS */
+
+.photo{
+
+width:260px;
+height:380px;
+
+border-radius:25px;
+
+object-fit:cover;
+
+box-shadow:0 0 25px hotpink;
+
+animation:zoom 5s infinite;
+
+transition:.8s;
+
+}
+
+@keyframes zoom{
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+
+/* CARD */
+
+.card{
+
+margin-top:25px;
+
+padding:20px;
+
+width:90%;
+
+max-width:340px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.1);
+
+backdrop-filter:blur(10px);
+
+text-align:center;
+
+box-shadow:0 0 20px rgba(255,0,255,.3);
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+
+color:#ffc6ff;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+}
+
+/* END */
+
+.group{
+
+display:flex;
+
+gap:15px;
+
+margin:30px 0;
+
+}
+
+.group img{
+
+width:90px;
+
+height:120px;
+
+border-radius:18px;
+
+object-fit:cover;
+
+box-shadow:0 0 15px hotpink;
+
+}
+
+.scene h1{
+
+text-align:center;
+
+font-family:'Dancing Script',cursive;
+
+font-size:2.3rem;
+
+color:#ffc6ff;
+
+}
+
+.scene h2{
+
+color:#ffccff;
+
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.photo{
+
+width:220px;
+
+height:320px;
+
+}
+
+.title{
+
+font-size:2.2rem;
+
+}
+
+.card{
+
+width:95%;
+
+}
+
+.group img{
+
+width:75px;
+
+height:100px;
+
+}
+
+}
